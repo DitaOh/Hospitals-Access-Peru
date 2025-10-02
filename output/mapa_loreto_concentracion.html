@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d06c3f96b0217bcb7f779bd8a33fd7f6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; left: 50px; width: 300px; height: 150px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                font-size:14px; padding: 10px">
+    <p><b>LORETO - CONCENTRACIÓN</b></p>
+    <p><b>Centro:</b> SANTA RITA</p>
+    <p><b>Distrito:</b> IQUITOS</p>
+    <p><i class="fa fa-home" style="color:red"></i> Centro Poblado</p>
+    <p><i class="fa fa-plus" style="color:blue"></i> Hospitales (26)</p>
+    <p style="color:blue">⭕ Buffer 10km</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_d06c3f96b0217bcb7f779bd8a33fd7f6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d06c3f96b0217bcb7f779bd8a33fd7f6 = L.map(
+                "map_d06c3f96b0217bcb7f779bd8a33fd7f6",
+                {
+                    center: [-3.733103333999962, -73.32407166699994],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_41ce5daabad703f7f302093c69f731a6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_41ce5daabad703f7f302093c69f731a6.addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var marker_993210358093485c5ae9bf519593d38e = L.marker(
+                [-3.733103333999962, -73.32407166699994],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_f68187eac64b48ec329e4021edf10ddc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e888cd5b5ee5f0afb8382d1bf8012959 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_877472414b2d0d2349ef194d0d2246c4 = $(`<div id="html_877472414b2d0d2349ef194d0d2246c4" style="width: 100.0%; height: 100.0%;">         <b>SANTA RITA</b><br>         Distrito: IQUITOS<br>         Tipo: Rural<br>         Hospitales en 10km: 26         </div>`)[0];
+                popup_e888cd5b5ee5f0afb8382d1bf8012959.setContent(html_877472414b2d0d2349ef194d0d2246c4);
+            
+        
+
+        marker_993210358093485c5ae9bf519593d38e.bindPopup(popup_e888cd5b5ee5f0afb8382d1bf8012959)
+        ;
+
+        
+    
+    
+            marker_993210358093485c5ae9bf519593d38e.bindTooltip(
+                `<div>
+                     Centro: SANTA RITA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_993210358093485c5ae9bf519593d38e.setIcon(icon_f68187eac64b48ec329e4021edf10ddc);
+            
+    
+        function geo_json_b60c727f14f46f6d442d657b4023a8fd_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillColor": "blue", "fillOpacity": 0.1, "weight": 2};
+            }
+        }
+
+        function geo_json_b60c727f14f46f6d442d657b4023a8fd_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_b60c727f14f46f6d442d657b4023a8fd = L.geoJson(null, {
+                onEachFeature: geo_json_b60c727f14f46f6d442d657b4023a8fd_onEachFeature,
+            
+                style: geo_json_b60c727f14f46f6d442d657b4023a8fd_styler,
+            ...{
+}
+        });
+
+        function geo_json_b60c727f14f46f6d442d657b4023a8fd_add (data) {
+            geo_json_b60c727f14f46f6d442d657b4023a8fd
+                .addData(data);
+        }
+            geo_json_b60c727f14f46f6d442d657b4023a8fd_add({"features": [{"geometry": {"coordinates": [[[-73.23405529011093, -3.7329264415764953], [-73.23447100600104, -3.741790617602428], [-73.23574958925794, -3.7505711838724873], [-73.237878755058, -3.7591835868967904], [-73.24083802739933, -3.7675448893894745], [-73.24459893515461, -3.775574568790928], [-73.24912528514268, -3.783195292676503], [-73.2543735096347, -3.7903336635880076], [-73.26029308499226, -3.796920926112464], [-73.26682701744532, -3.802893629389956], [-73.27391239136544, -3.808194238655824], [-73.28148097478018, -3.812771689907827], [-73.28945987631472, -3.8165818823324673], [-73.29777224724171, -3.8195881037204455], [-73.30633802187566, -3.8217613847451304], [-73.31507468916956, -3.8230807786615015], [-73.32389808806076, -3.8235335637030445], [-73.33272321887637, -3.8231153661994894], [-73.34146506294695, -3.8218302032057463], [-73.35003940249204, -3.819690444211592], [-73.35836363283597, -3.8167166922859845], [-73.36635755908432, -3.8129375857911776], [-73.37394416954162, -3.808389522573285], [-73.38105037837839, -3.8031163092874056], [-73.38760773035537, -3.797168739242976], [-73.3935530607852, -3.7906041028476367], [-73.39882910434964, -3.783485635381872], [-73.40338504689218, -3.775881907443368], [-73.4071770148625, -3.76786616395478], [-73.41016849770048, -3.759515618125283], [-73.41233069910002, -3.7509107071905325], [-73.41364281378732, -3.7421343171232677], [-73.41409222717154, -3.733270983804138], [-73.41367463597548, -3.724406078366659], [-73.41239408871844, -3.7156249845799403], [-73.410262945699, -3.70701227620602], [-73.40730175890211, -3.6986509022652485], [-73.40353907302625, -3.6906213880630885], [-73.39901114958465, -3.683001059675874], [-73.39376161677316, -3.6758632993632347], [-73.38784104850843, -3.6692768390733823], [-73.38130647671771, -3.6633050988369744], [-73.37422084159931, -3.658005576409638], [-73.36665238516382, -3.653429294027031], [-73.35867399390669, -3.649620307583583], [-73.35036249694592, -3.6466152829432676], [-73.34179792638103, -3.644443143442181], [-73.33306274698725, -3.6431247919570082], [-73.32424106264786, -3.642672910194008], [-73.31541780714608, -3.643091837110802], [-73.30667792708367, -3.64437752762144], [-73.29810556476488, -3.646517591963955], [-73.28978324888128, -3.6494914153350893], [-73.28179110075541, -3.65327035662713], [-73.27420606375037, -3.657818024342806], [-73.26710116322883, -3.6630906270261674], [-73.26054480415243, -3.6690373948330985], [-73.25460011305236, -3.6756010681856583], [-73.24932433067816, -3.682718448812656], [-73.24476826114946, -3.6903210078830235], [-73.24097578289694, -3.6983355453929785], [-73.23798342609086, -3.7066848944782835], [-73.23582002062354, -3.7152886638932934], [-73.23450641804037, -3.7240640115330126], [-73.23405529011093, -3.7329264415764953]]], "type": "Polygon"}, "id": "0", "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_b60c727f14f46f6d442d657b4023a8fd.bindTooltip(
+                `<div>
+                     Buffer de 10km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_b60c727f14f46f6d442d657b4023a8fd.addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var marker_b6f9751584a7bf98af5fbf6d01389f77 = L.marker(
+                [-3.7645702200000013, -73.24459961],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_f21cdbf6b4040c295ca1cbb5fe53fd43 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16949d2fea9938c432a41440447a0701 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e4e0103b61b644c07ae09bd52e9faec1 = $(`<div id="html_e4e0103b61b644c07ae09bd52e9faec1" style="width: 100.0%; height: 100.0%;">             <b>C.S. I-3 9 DE OCTUBRE</b><br>             Categoría: I-3<br>             Distrito: BELEN             </div>`)[0];
+                popup_16949d2fea9938c432a41440447a0701.setContent(html_e4e0103b61b644c07ae09bd52e9faec1);
+            
+        
+
+        marker_b6f9751584a7bf98af5fbf6d01389f77.bindPopup(popup_16949d2fea9938c432a41440447a0701)
+        ;
+
+        
+    
+    
+            marker_b6f9751584a7bf98af5fbf6d01389f77.bindTooltip(
+                `<div>
+                     C.S. I-3 9 DE OCTUBRE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b6f9751584a7bf98af5fbf6d01389f77.setIcon(icon_f21cdbf6b4040c295ca1cbb5fe53fd43);
+            
+    
+            var marker_cbae04b72a5ba8731db7b1d8a079c79b = L.marker(
+                [-3.780539999999994, -73.35469],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_5b0d53efae111d433600d17a9bffa6d8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_919d7435a07dea39126fb5090571ad27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e652637b006a272760ae26044b6a5ab = $(`<div id="html_9e652637b006a272760ae26044b6a5ab" style="width: 100.0%; height: 100.0%;">             <b>1RO. DE ENERO</b><br>             Categoría: I-2<br>             Distrito: IQUITOS             </div>`)[0];
+                popup_919d7435a07dea39126fb5090571ad27.setContent(html_9e652637b006a272760ae26044b6a5ab);
+            
+        
+
+        marker_cbae04b72a5ba8731db7b1d8a079c79b.bindPopup(popup_919d7435a07dea39126fb5090571ad27)
+        ;
+
+        
+    
+    
+            marker_cbae04b72a5ba8731db7b1d8a079c79b.bindTooltip(
+                `<div>
+                     1RO. DE ENERO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cbae04b72a5ba8731db7b1d8a079c79b.setIcon(icon_5b0d53efae111d433600d17a9bffa6d8);
+            
+    
+            var marker_e9157665de1673d81d1d3a783fb8d30c = L.marker(
+                [-3.7709699999999975, -73.3622],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_7af33bd31433e961a828d76c60c90478 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_736304b04ee5be546db2a63e470e0b6f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0433c791d71dee3dfe966a2f2beae4e9 = $(`<div id="html_0433c791d71dee3dfe966a2f2beae4e9" style="width: 100.0%; height: 100.0%;">             <b>TUPAC AMARU DE IQUITOS</b><br>             Categoría: I-3<br>             Distrito: IQUITOS             </div>`)[0];
+                popup_736304b04ee5be546db2a63e470e0b6f.setContent(html_0433c791d71dee3dfe966a2f2beae4e9);
+            
+        
+
+        marker_e9157665de1673d81d1d3a783fb8d30c.bindPopup(popup_736304b04ee5be546db2a63e470e0b6f)
+        ;
+
+        
+    
+    
+            marker_e9157665de1673d81d1d3a783fb8d30c.bindTooltip(
+                `<div>
+                     TUPAC AMARU DE IQUITOS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e9157665de1673d81d1d3a783fb8d30c.setIcon(icon_7af33bd31433e961a828d76c60c90478);
+            
+    
+            var marker_9efc08d4516b737880538e4458524f0d = L.marker(
+                [-3.7743900000000004, -73.37176],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_67897b387100b47ddf2da58c42a14576 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_883d35db0cd57a667964f81b8b8c82ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_091530c62f4e88e2133aedcf7f1d7d14 = $(`<div id="html_091530c62f4e88e2133aedcf7f1d7d14" style="width: 100.0%; height: 100.0%;">             <b>SAN ANTONIO DE IQUITOS</b><br>             Categoría: I-3<br>             Distrito: IQUITOS             </div>`)[0];
+                popup_883d35db0cd57a667964f81b8b8c82ff.setContent(html_091530c62f4e88e2133aedcf7f1d7d14);
+            
+        
+
+        marker_9efc08d4516b737880538e4458524f0d.bindPopup(popup_883d35db0cd57a667964f81b8b8c82ff)
+        ;
+
+        
+    
+    
+            marker_9efc08d4516b737880538e4458524f0d.bindTooltip(
+                `<div>
+                     SAN ANTONIO DE IQUITOS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9efc08d4516b737880538e4458524f0d.setIcon(icon_67897b387100b47ddf2da58c42a14576);
+            
+    
+            var marker_4ae6dde32d3210c7f8c6a83990a6f97d = L.marker(
+                [-3.6459099999999953, -73.31953],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_12cf056dbec0f82c2b41f0c090e4cf20 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2cea779b36c489ce8a211d95e0a1f65 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_530c7f882b929ce0a0b9545586ec246c = $(`<div id="html_530c7f882b929ce0a0b9545586ec246c" style="width: 100.0%; height: 100.0%;">             <b>CENTRO FUERTE</b><br>             Categoría: I-1<br>             Distrito: PUNCHANA             </div>`)[0];
+                popup_c2cea779b36c489ce8a211d95e0a1f65.setContent(html_530c7f882b929ce0a0b9545586ec246c);
+            
+        
+
+        marker_4ae6dde32d3210c7f8c6a83990a6f97d.bindPopup(popup_c2cea779b36c489ce8a211d95e0a1f65)
+        ;
+
+        
+    
+    
+            marker_4ae6dde32d3210c7f8c6a83990a6f97d.bindTooltip(
+                `<div>
+                     CENTRO FUERTE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4ae6dde32d3210c7f8c6a83990a6f97d.setIcon(icon_12cf056dbec0f82c2b41f0c090e4cf20);
+            
+    
+            var marker_495ce6912717b9b024c47469dc29c803 = L.marker(
+                [-3.7513058000000035, -73.2437528],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_173f5c1f09bcd7d379bfff3445d66beb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1598e56d87d3ccccd05b44bb9d7c14c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_74006a9c6abc8113b18b23d2c42e7aa7 = $(`<div id="html_74006a9c6abc8113b18b23d2c42e7aa7" style="width: 100.0%; height: 100.0%;">             <b>CENTRO DE ATENCION PRIMARIA III IQUITOS</b><br>             Categoría: I-3<br>             Distrito: IQUITOS             </div>`)[0];
+                popup_1598e56d87d3ccccd05b44bb9d7c14c2.setContent(html_74006a9c6abc8113b18b23d2c42e7aa7);
+            
+        
+
+        marker_495ce6912717b9b024c47469dc29c803.bindPopup(popup_1598e56d87d3ccccd05b44bb9d7c14c2)
+        ;
+
+        
+    
+    
+            marker_495ce6912717b9b024c47469dc29c803.bindTooltip(
+                `<div>
+                     CENTRO DE ATENCION PRIMARIA III IQUITOS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_495ce6912717b9b024c47469dc29c803.setIcon(icon_173f5c1f09bcd7d379bfff3445d66beb);
+            
+    
+            var marker_8360ca42adc2ce76cc5d0f5769fc65bb = L.marker(
+                [-3.7832900000000094, -73.3462],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_1f4d87a1809fe9b8fd100e3533ea8c70 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_29f45bf846868e22a3fc351a8d5c5ad4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_479839afacf0cd0edc2ad0568d5482ea = $(`<div id="html_479839afacf0cd0edc2ad0568d5482ea" style="width: 100.0%; height: 100.0%;">             <b>VARGAS GUERRA</b><br>             Categoría: I-1<br>             Distrito: IQUITOS             </div>`)[0];
+                popup_29f45bf846868e22a3fc351a8d5c5ad4.setContent(html_479839afacf0cd0edc2ad0568d5482ea);
+            
+        
+
+        marker_8360ca42adc2ce76cc5d0f5769fc65bb.bindPopup(popup_29f45bf846868e22a3fc351a8d5c5ad4)
+        ;
+
+        
+    
+    
+            marker_8360ca42adc2ce76cc5d0f5769fc65bb.bindTooltip(
+                `<div>
+                     VARGAS GUERRA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8360ca42adc2ce76cc5d0f5769fc65bb.setIcon(icon_1f4d87a1809fe9b8fd100e3533ea8c70);
+            
+    
+            var marker_b972544b9f16defa966bec601f0a7382 = L.marker(
+                [-3.7645702200000013, -73.24459961],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_e26f873bf345ab93680860980988a98e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_15149e20aa6db43f91ce094065b148fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab2c7c796cbb1d6a0c8da6c6b18ccb7d = $(`<div id="html_ab2c7c796cbb1d6a0c8da6c6b18ccb7d" style="width: 100.0%; height: 100.0%;">             <b>6 DE OCTUBRE</b><br>             Categoría: I-3<br>             Distrito: BELEN             </div>`)[0];
+                popup_15149e20aa6db43f91ce094065b148fb.setContent(html_ab2c7c796cbb1d6a0c8da6c6b18ccb7d);
+            
+        
+
+        marker_b972544b9f16defa966bec601f0a7382.bindPopup(popup_15149e20aa6db43f91ce094065b148fb)
+        ;
+
+        
+    
+    
+            marker_b972544b9f16defa966bec601f0a7382.bindTooltip(
+                `<div>
+                     6 DE OCTUBRE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b972544b9f16defa966bec601f0a7382.setIcon(icon_e26f873bf345ab93680860980988a98e);
+            
+    
+            var marker_c0716865318bd835257672afe7440edc = L.marker(
+                [-3.7628180000000073, -73.253653],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_33c813799fc952a5e88a4d09dc4f7301 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_14782750c8adfb7a497ac0899ba12b85 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4132637f649654cf1f5afd663fa4ab8f = $(`<div id="html_4132637f649654cf1f5afd663fa4ab8f" style="width: 100.0%; height: 100.0%;">             <b>HOSPITAL IQUITOS "CESAR GARAYAR GARCIA"</b><br>             Categoría: II-2<br>             Distrito: IQUITOS             </div>`)[0];
+                popup_14782750c8adfb7a497ac0899ba12b85.setContent(html_4132637f649654cf1f5afd663fa4ab8f);
+            
+        
+
+        marker_c0716865318bd835257672afe7440edc.bindPopup(popup_14782750c8adfb7a497ac0899ba12b85)
+        ;
+
+        
+    
+    
+            marker_c0716865318bd835257672afe7440edc.bindTooltip(
+                `<div>
+                     HOSPITAL IQUITOS "CESAR GARAYAR GARCIA"
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c0716865318bd835257672afe7440edc.setIcon(icon_33c813799fc952a5e88a4d09dc4f7301);
+            
+    
+            var marker_02b3bf302b79e7b26047b508a4f146f3 = L.marker(
+                [-3.774419999999994, -73.28655],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_f61f90461ba447ae467783bcf1c0e657 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5feae0bc4595c7913b44914029795a2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_15436ea0bf673cdfce1f65ab29502da3 = $(`<div id="html_15436ea0bf673cdfce1f65ab29502da3" style="width: 100.0%; height: 100.0%;">             <b>SAN JUAN DE MIRAFLORES</b><br>             Categoría: I-4<br>             Distrito: SAN JUAN BAUTISTA             </div>`)[0];
+                popup_5feae0bc4595c7913b44914029795a2a.setContent(html_15436ea0bf673cdfce1f65ab29502da3);
+            
+        
+
+        marker_02b3bf302b79e7b26047b508a4f146f3.bindPopup(popup_5feae0bc4595c7913b44914029795a2a)
+        ;
+
+        
+    
+    
+            marker_02b3bf302b79e7b26047b508a4f146f3.bindTooltip(
+                `<div>
+                     SAN JUAN DE MIRAFLORES
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_02b3bf302b79e7b26047b508a4f146f3.setIcon(icon_f61f90461ba447ae467783bcf1c0e657);
+            
+    
+            var marker_4c6f256faf9eded079c285f92c9486ab = L.marker(
+                [-3.7534399999999937, -73.35446],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_572e68b0de4fd1d545e152cbf71c3155 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_936513e4068c07451c6780a568965d79 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b8b06dbdc37418a9ab0a77eb09dd469e = $(`<div id="html_b8b06dbdc37418a9ab0a77eb09dd469e" style="width: 100.0%; height: 100.0%;">             <b>MORONACOCHA</b><br>             Categoría: I-4<br>             Distrito: IQUITOS             </div>`)[0];
+                popup_936513e4068c07451c6780a568965d79.setContent(html_b8b06dbdc37418a9ab0a77eb09dd469e);
+            
+        
+
+        marker_4c6f256faf9eded079c285f92c9486ab.bindPopup(popup_936513e4068c07451c6780a568965d79)
+        ;
+
+        
+    
+    
+            marker_4c6f256faf9eded079c285f92c9486ab.bindTooltip(
+                `<div>
+                     MORONACOCHA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4c6f256faf9eded079c285f92c9486ab.setIcon(icon_572e68b0de4fd1d545e152cbf71c3155);
+            
+    
+            var marker_cc2f7a76a02ca24aff2263eb24a83221 = L.marker(
+                [-3.7848110100000034, -73.28816103],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_c61e2334d216d64da314bfcc7400439e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_964b3a61ae82f77913096eabd4fb0f9c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_859e466de34053cec965606d9bf8cfe5 = $(`<div id="html_859e466de34053cec965606d9bf8cfe5" style="width: 100.0%; height: 100.0%;">             <b>NUEVO PROGRESO</b><br>             Categoría: I-1<br>             Distrito: FERNANDO LORES             </div>`)[0];
+                popup_964b3a61ae82f77913096eabd4fb0f9c.setContent(html_859e466de34053cec965606d9bf8cfe5);
+            
+        
+
+        marker_cc2f7a76a02ca24aff2263eb24a83221.bindPopup(popup_964b3a61ae82f77913096eabd4fb0f9c)
+        ;
+
+        
+    
+    
+            marker_cc2f7a76a02ca24aff2263eb24a83221.bindTooltip(
+                `<div>
+                     NUEVO PROGRESO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cc2f7a76a02ca24aff2263eb24a83221.setIcon(icon_c61e2334d216d64da314bfcc7400439e);
+            
+    
+            var marker_64ce5a94d5a4aa50a842b3ea30c21c1f = L.marker(
+                [-3.774418000000001, -73.287],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_a800372cad727f96b6a99118d4ba517a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_75c1030d9fa2caa52f09d9a48dd94df3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c74460050bc87ecfbe3f494e375933b = $(`<div id="html_4c74460050bc87ecfbe3f494e375933b" style="width: 100.0%; height: 100.0%;">             <b>PROGRESO DE SAN JUAN BAUTISTA</b><br>             Categoría: I-2<br>             Distrito: SAN JUAN BAUTISTA             </div>`)[0];
+                popup_75c1030d9fa2caa52f09d9a48dd94df3.setContent(html_4c74460050bc87ecfbe3f494e375933b);
+            
+        
+
+        marker_64ce5a94d5a4aa50a842b3ea30c21c1f.bindPopup(popup_75c1030d9fa2caa52f09d9a48dd94df3)
+        ;
+
+        
+    
+    
+            marker_64ce5a94d5a4aa50a842b3ea30c21c1f.bindTooltip(
+                `<div>
+                     PROGRESO DE SAN JUAN BAUTISTA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_64ce5a94d5a4aa50a842b3ea30c21c1f.setIcon(icon_a800372cad727f96b6a99118d4ba517a);
+            
+    
+            var marker_4375623fc4cc151f51eceec5ca755064 = L.marker(
+                [-3.7878819499999956, -73.29931008],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_b7c070807d61f79a16255b6a3959e97b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0dd09692c555761e18afc3f11729c7ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_125045640013cbb439effd0950f61bde = $(`<div id="html_125045640013cbb439effd0950f61bde" style="width: 100.0%; height: 100.0%;">             <b>AMERICA DE SAN JUAN BAUTISTA</b><br>             Categoría: I-3<br>             Distrito: SAN JUAN BAUTISTA             </div>`)[0];
+                popup_0dd09692c555761e18afc3f11729c7ee.setContent(html_125045640013cbb439effd0950f61bde);
+            
+        
+
+        marker_4375623fc4cc151f51eceec5ca755064.bindPopup(popup_0dd09692c555761e18afc3f11729c7ee)
+        ;
+
+        
+    
+    
+            marker_4375623fc4cc151f51eceec5ca755064.bindTooltip(
+                `<div>
+                     AMERICA DE SAN JUAN BAUTISTA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4375623fc4cc151f51eceec5ca755064.setIcon(icon_b7c070807d61f79a16255b6a3959e97b);
+            
+    
+            var marker_d61a813ae54d91b0d13a0d8b5b6a8112 = L.marker(
+                [-3.7188407999999944, -73.2439423],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_4b63f83a75c4e8f44ff044e134bd114c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0a66ca512922c8278d550e4e048664bf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d36c71456e4965a3ca1f4bedd40cc9c4 = $(`<div id="html_d36c71456e4965a3ca1f4bedd40cc9c4" style="width: 100.0%; height: 100.0%;">             <b>HOSPITAL III IQUITOS</b><br>             Categoría: III-1<br>             Distrito: PUNCHANA             </div>`)[0];
+                popup_0a66ca512922c8278d550e4e048664bf.setContent(html_d36c71456e4965a3ca1f4bedd40cc9c4);
+            
+        
+
+        marker_d61a813ae54d91b0d13a0d8b5b6a8112.bindPopup(popup_0a66ca512922c8278d550e4e048664bf)
+        ;
+
+        
+    
+    
+            marker_d61a813ae54d91b0d13a0d8b5b6a8112.bindTooltip(
+                `<div>
+                     HOSPITAL III IQUITOS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d61a813ae54d91b0d13a0d8b5b6a8112.setIcon(icon_4b63f83a75c4e8f44ff044e134bd114c);
+            
+    
+            var marker_05974914ef3e8c797b71d667e56908b7 = L.marker(
+                [-3.7318900000000044, -73.32325],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_931b1dc6df73cb4ba15a7a2322174550 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76890d1ed625e3c976b59581f187c73c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6189a74d0068f81c9df90c07da246368 = $(`<div id="html_6189a74d0068f81c9df90c07da246368" style="width: 100.0%; height: 100.0%;">             <b>CENTRO REHABILITACION ENFERMO MENTAL</b><br>             Categoría: I-2<br>             Distrito: SAN JUAN BAUTISTA             </div>`)[0];
+                popup_76890d1ed625e3c976b59581f187c73c.setContent(html_6189a74d0068f81c9df90c07da246368);
+            
+        
+
+        marker_05974914ef3e8c797b71d667e56908b7.bindPopup(popup_76890d1ed625e3c976b59581f187c73c)
+        ;
+
+        
+    
+    
+            marker_05974914ef3e8c797b71d667e56908b7.bindTooltip(
+                `<div>
+                     CENTRO REHABILITACION ENFERMO MENTAL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_05974914ef3e8c797b71d667e56908b7.setIcon(icon_931b1dc6df73cb4ba15a7a2322174550);
+            
+    
+            var marker_47977cc7daa8afea8b6ac06e0316c4a2 = L.marker(
+                [-3.731224799999991, -73.2473552],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_2478cad9128617aed1e2a2761480bd31 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_80f83e48c1582ac23f936b7f5c900e75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_80c7de014564a3b1c4830d5f3a4bb22a = $(`<div id="html_80c7de014564a3b1c4830d5f3a4bb22a" style="width: 100.0%; height: 100.0%;">             <b>CENTRO DE ATENCION PRIMARIA III PUNCHANA</b><br>             Categoría: I-3<br>             Distrito: PUNCHANA             </div>`)[0];
+                popup_80f83e48c1582ac23f936b7f5c900e75.setContent(html_80c7de014564a3b1c4830d5f3a4bb22a);
+            
+        
+
+        marker_47977cc7daa8afea8b6ac06e0316c4a2.bindPopup(popup_80f83e48c1582ac23f936b7f5c900e75)
+        ;
+
+        
+    
+    
+            marker_47977cc7daa8afea8b6ac06e0316c4a2.bindTooltip(
+                `<div>
+                     CENTRO DE ATENCION PRIMARIA III PUNCHANA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_47977cc7daa8afea8b6ac06e0316c4a2.setIcon(icon_2478cad9128617aed1e2a2761480bd31);
+            
+    
+            var marker_5f82963bf4f39285c6473f787b91fc1d = L.marker(
+                [-3.7269604799999994, -73.25341698],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_b88d30c58db3ce30c0aea095438f2cb7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5fd45ce70bbcc00d22bb15631849ee0a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6d60b58192fc6f960db9debc4e7c01bc = $(`<div id="html_6d60b58192fc6f960db9debc4e7c01bc" style="width: 100.0%; height: 100.0%;">             <b>HOSPITAL REGIONAL DE LORETO "FELIPE SANTIAGO ARRIOLA IGLESIAS"</b><br>             Categoría: III-1<br>             Distrito: PUNCHANA             </div>`)[0];
+                popup_5fd45ce70bbcc00d22bb15631849ee0a.setContent(html_6d60b58192fc6f960db9debc4e7c01bc);
+            
+        
+
+        marker_5f82963bf4f39285c6473f787b91fc1d.bindPopup(popup_5fd45ce70bbcc00d22bb15631849ee0a)
+        ;
+
+        
+    
+    
+            marker_5f82963bf4f39285c6473f787b91fc1d.bindTooltip(
+                `<div>
+                     HOSPITAL REGIONAL DE LORETO "FELIPE SANTIAGO ARRIOLA IGLESIAS"
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5f82963bf4f39285c6473f787b91fc1d.setIcon(icon_b88d30c58db3ce30c0aea095438f2cb7);
+            
+    
+            var marker_8919a5cd425ffc9836a8feded6bd7e29 = L.marker(
+                [-3.7195100000000068, -73.28273],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_e74c4d0244f1fb36098acf46d61653eb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0e6c031095f9dfe87fa561299c9b14a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4436fd43e45f58c42c5cb3948a30b3d2 = $(`<div id="html_4436fd43e45f58c42c5cb3948a30b3d2" style="width: 100.0%; height: 100.0%;">             <b>MANACAMIRI</b><br>             Categoría: I-1<br>             Distrito: IQUITOS             </div>`)[0];
+                popup_0e6c031095f9dfe87fa561299c9b14a0.setContent(html_4436fd43e45f58c42c5cb3948a30b3d2);
+            
+        
+
+        marker_8919a5cd425ffc9836a8feded6bd7e29.bindPopup(popup_0e6c031095f9dfe87fa561299c9b14a0)
+        ;
+
+        
+    
+    
+            marker_8919a5cd425ffc9836a8feded6bd7e29.bindTooltip(
+                `<div>
+                     MANACAMIRI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8919a5cd425ffc9836a8feded6bd7e29.setIcon(icon_e74c4d0244f1fb36098acf46d61653eb);
+            
+    
+            var marker_215645e65ff8c17a0020c7f403b3ea0f = L.marker(
+                [-3.8008698699999974, -73.33900617],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_94532fad7fbf84e770364a99be42cadf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f0241668335199a76a455a4dc4ace1a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_efca2a8c633e57b0577499455db2e9f1 = $(`<div id="html_efca2a8c633e57b0577499455db2e9f1" style="width: 100.0%; height: 100.0%;">             <b>SANTO TOMAS DE SAN JUAN DE BAUTISTA</b><br>             Categoría: I-2<br>             Distrito: SAN JUAN BAUTISTA             </div>`)[0];
+                popup_8f0241668335199a76a455a4dc4ace1a.setContent(html_efca2a8c633e57b0577499455db2e9f1);
+            
+        
+
+        marker_215645e65ff8c17a0020c7f403b3ea0f.bindPopup(popup_8f0241668335199a76a455a4dc4ace1a)
+        ;
+
+        
+    
+    
+            marker_215645e65ff8c17a0020c7f403b3ea0f.bindTooltip(
+                `<div>
+                     SANTO TOMAS DE SAN JUAN DE BAUTISTA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_215645e65ff8c17a0020c7f403b3ea0f.setIcon(icon_94532fad7fbf84e770364a99be42cadf);
+            
+    
+            var marker_46d9e6dd0fe3c7203b69d115dae3d6e6 = L.marker(
+                [-3.778867770000005, -73.28103798],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_82c05636e9f86981e98e99bed1cff423 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d51a01ad2ed3df9d8251e04a2c209e11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_10c3826f337d95665de27f9825f40cb6 = $(`<div id="html_10c3826f337d95665de27f9825f40cb6" style="width: 100.0%; height: 100.0%;">             <b>MODELO</b><br>             Categoría: I-2<br>             Distrito: SAN JUAN BAUTISTA             </div>`)[0];
+                popup_d51a01ad2ed3df9d8251e04a2c209e11.setContent(html_10c3826f337d95665de27f9825f40cb6);
+            
+        
+
+        marker_46d9e6dd0fe3c7203b69d115dae3d6e6.bindPopup(popup_d51a01ad2ed3df9d8251e04a2c209e11)
+        ;
+
+        
+    
+    
+            marker_46d9e6dd0fe3c7203b69d115dae3d6e6.bindTooltip(
+                `<div>
+                     MODELO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_46d9e6dd0fe3c7203b69d115dae3d6e6.setIcon(icon_82c05636e9f86981e98e99bed1cff423);
+            
+    
+            var marker_6a765398256f32a7befedb73e7c0256c = L.marker(
+                [-3.774696580000003, -73.27373847],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_780016bde9e42058410ee5d9ef671da7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f739e8e1f0af010bd2396faef9f308b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_72635937d3447dfc996a232c3dd06a0a = $(`<div id="html_72635937d3447dfc996a232c3dd06a0a" style="width: 100.0%; height: 100.0%;">             <b>CARDOZO</b><br>             Categoría: I-3<br>             Distrito: BELEN             </div>`)[0];
+                popup_f739e8e1f0af010bd2396faef9f308b1.setContent(html_72635937d3447dfc996a232c3dd06a0a);
+            
+        
+
+        marker_6a765398256f32a7befedb73e7c0256c.bindPopup(popup_f739e8e1f0af010bd2396faef9f308b1)
+        ;
+
+        
+    
+    
+            marker_6a765398256f32a7befedb73e7c0256c.bindTooltip(
+                `<div>
+                     CARDOZO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6a765398256f32a7befedb73e7c0256c.setIcon(icon_780016bde9e42058410ee5d9ef671da7);
+            
+    
+            var marker_b59589e702b09dc565863ee252ad978c = L.marker(
+                [-3.6938300000000033, -73.27162],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_6b7e305a66ff7fa9edb753f0dbc3420f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc15f985207dc3702575912467abcca7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60ed9722e0e2dfe6dc1b477620364250 = $(`<div id="html_60ed9722e0e2dfe6dc1b477620364250" style="width: 100.0%; height: 100.0%;">             <b>P.S. PADRE COCHA</b><br>             Categoría: I-2<br>             Distrito: PUNCHANA             </div>`)[0];
+                popup_bc15f985207dc3702575912467abcca7.setContent(html_60ed9722e0e2dfe6dc1b477620364250);
+            
+        
+
+        marker_b59589e702b09dc565863ee252ad978c.bindPopup(popup_bc15f985207dc3702575912467abcca7)
+        ;
+
+        
+    
+    
+            marker_b59589e702b09dc565863ee252ad978c.bindTooltip(
+                `<div>
+                     P.S. PADRE COCHA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b59589e702b09dc565863ee252ad978c.setIcon(icon_6b7e305a66ff7fa9edb753f0dbc3420f);
+            
+    
+            var marker_ba63017bdbc5cf54332295e24db557e5 = L.marker(
+                [-3.779367709999996, -73.31303996],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_72873984c44759e2cf03b8aac64d9893 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eef523ccf603b47d0d4f273598befe10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6013fd2ed00d5227db42775f4f219d31 = $(`<div id="html_6013fd2ed00d5227db42775f4f219d31" style="width: 100.0%; height: 100.0%;">             <b>RUMOCOCHA</b><br>             Categoría: I-1<br>             Distrito: SAN JUAN BAUTISTA             </div>`)[0];
+                popup_eef523ccf603b47d0d4f273598befe10.setContent(html_6013fd2ed00d5227db42775f4f219d31);
+            
+        
+
+        marker_ba63017bdbc5cf54332295e24db557e5.bindPopup(popup_eef523ccf603b47d0d4f273598befe10)
+        ;
+
+        
+    
+    
+            marker_ba63017bdbc5cf54332295e24db557e5.bindTooltip(
+                `<div>
+                     RUMOCOCHA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ba63017bdbc5cf54332295e24db557e5.setIcon(icon_72873984c44759e2cf03b8aac64d9893);
+            
+    
+            var marker_5436e70506d85874275d7575b4ab96e1 = L.marker(
+                [-3.7645599999999932, -73.24462],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_f0d0c79795e32a24a811d35e264c65fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_574e686525467966c406bd29d42bd41c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3fdd8a7f3429131d885748dc28a5027 = $(`<div id="html_c3fdd8a7f3429131d885748dc28a5027" style="width: 100.0%; height: 100.0%;">             <b>ACLAS BELEN DE VILLA BELEN</b><br>             Categoría: I-3<br>             Distrito: BELEN             </div>`)[0];
+                popup_574e686525467966c406bd29d42bd41c.setContent(html_c3fdd8a7f3429131d885748dc28a5027);
+            
+        
+
+        marker_5436e70506d85874275d7575b4ab96e1.bindPopup(popup_574e686525467966c406bd29d42bd41c)
+        ;
+
+        
+    
+    
+            marker_5436e70506d85874275d7575b4ab96e1.bindTooltip(
+                `<div>
+                     ACLAS BELEN DE VILLA BELEN
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5436e70506d85874275d7575b4ab96e1.setIcon(icon_f0d0c79795e32a24a811d35e264c65fb);
+            
+    
+            var marker_9646f51404a76d835a904892c98187b7 = L.marker(
+                [-3.784615100000007, -73.2560796],
+                {
+}
+            ).addTo(map_d06c3f96b0217bcb7f779bd8a33fd7f6);
+        
+    
+            var icon_95116ff81b23f66fda74c4c920bb3223 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b93be4872343530b11a18a2d8c67213 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd93e83c8a30e43b3520ba0c89582200 = $(`<div id="html_bd93e83c8a30e43b3520ba0c89582200" style="width: 100.0%; height: 100.0%;">             <b>MUNICHS - RIO ITAYA</b><br>             Categoría: I-1<br>             Distrito: BELEN             </div>`)[0];
+                popup_2b93be4872343530b11a18a2d8c67213.setContent(html_bd93e83c8a30e43b3520ba0c89582200);
+            
+        
+
+        marker_9646f51404a76d835a904892c98187b7.bindPopup(popup_2b93be4872343530b11a18a2d8c67213)
+        ;
+
+        
+    
+    
+            marker_9646f51404a76d835a904892c98187b7.bindTooltip(
+                `<div>
+                     MUNICHS - RIO ITAYA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9646f51404a76d835a904892c98187b7.setIcon(icon_95116ff81b23f66fda74c4c920bb3223);
+            
+</script>
+</html>
