@@ -9,6 +9,7 @@ import pandas as pd
 st.set_page_config(
     page_title="🏥 Hospitals in Peru",
     page_icon="🏥",
+    
     layout="wide"
 )
 
