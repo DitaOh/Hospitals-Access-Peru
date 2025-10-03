@@ -2,6 +2,8 @@ import streamlit as st
 import geopandas as gpd
 import folium
 from streamlit_folium import st_folium
+import pandas as pd
+
 
 # Configuración de la página
 st.set_page_config(
@@ -56,7 +58,8 @@ with tab2:
     with col1:
         st.write("Map 2. Districts with zero hospitals.")
         st.image("output/mapa2_distritos_sin_hospitales.png",
-                 caption="Districts with Zero Hospitals")
+                 caption="Districts with Zero Hospitals",
+                 width = 520)
         
     with col2:
         st.write("Map 3. Top 10 districts with the highest number of hospitals.")
@@ -65,20 +68,23 @@ with tab2:
 
     st.subheader("Department level Analysis")
 
-    st.write("Department Summary Table")
-    st.write("Aquí la tabla resumen por departamento.")
-    
-    col1, col2 = st.columns([1.8,1.2])
+    st.write("📊 Department Summary Table")
+    col1, col2 = st.columns([1,2])
     with col1:
+        hospitales_df = pd.read_csv("output/hospitales_por_departamento.csv")
+        hospitales_df = hospitales_df.rename(columns={"num_hospitales": "Cantidad de hospitales"})
+        st.dataframe(hospitales_df, width=True, height=600)
+    
+    with col2:
         st.write("Graph 1. Total public hospitals per Department.")
         st.image("output/grafico_hospitales_por_departamento.png",
                  caption="Number of Hospitals by Department")
     
+    col1, col2, col3 = st.columns([1,2,1])
     with col2:
         st.write("Map 4. Total public hospitals per Department.")
         st.image("output/mapa_hospitales_por_departamento.png",
-                 caption="Number of Hospitals by Department",
-                 width = 400)
+                 caption="Number of Hospitals by Department")
 
 # TAB 3: Dynamic Maps
 with tab3:
@@ -86,11 +92,12 @@ with tab3:
     
     st.subheader("National Choropleth + Markers")
     st.write("Mapa Folium con choropleth nacional y marcadores de hospitales.")
-    # folium_map = folium.Map(location=[-9.19, -75.0152], zoom_start=5)
-    # st_folium(folium_map, width=700, height=500)
+    with open("output/mapa_hospitales.html", "r", encoding="utf-8") as f:
+        mapa_html = f.read()
+    st.components.v1.html(mapa_html, height=600)
     
     st.subheader("Proximity Maps for Lima & Loreto")
     st.write("Mapas de proximidad")
-    # Ejemplo:
-    # lima_map = folium.Map(location=[-12.0464, -77.0428], zoom_start=10)
-    # st_folium(lima_map, width=700, height=500)
+    with open("output/mapa_proximidades.html", "r", encoding="utf-8") as f:
+        mapa_html = f.read()
+    st.components.v1.html(mapa_html, height=600)
